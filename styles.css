@@ -87,12 +87,22 @@ a {
     display: inline-block;
 }
 
+.nav-item i {
+    margin-right: 8px;
+    color: var(--primary-color); 
+}
+
 .nav-item:hover,
 .nav-item.active {
     color: var(--secondary-color);
     background-color: rgba(255, 204, 0, 0.1);
     font-weight: 600;
     transform: scale(1.1);
+}
+
+.nav-item:hover i,
+.nav-item.active i {
+    color: var(--secondary-color);
 }
 
 .nav-item.active {
