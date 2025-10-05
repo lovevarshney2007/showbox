@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShowBox - Your Ultimate Entertainment Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo-container">
+            <a href="#home">
+                <img src="logo.png" alt="ShowBox Logo" class="logo-img">
+            </a>
+            <a href="#home" class="site-title">SHOWBOX</a>
+        </div>
+        
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-item" data-target="home">Home</a></li>
+                <li><a href="#trending" class="nav-item" data-target="trending">Trending Now</a></li> 
+                <li><a href="#movies" class="nav-item" data-target="movies">Movies</a></li>
+                <li><a href="#music" class="nav-item" data-target="music">Music</a></li>
+                <li><a href="#registration" class="nav-item" data-target="registration">Register</a></li> 
+                <li><a href="#feedback" class="nav-item" data-target="feedback">Rate Content</a></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="home" class="section">
+            <h2>Welcome to ShowBox </h2>
+            <p>Your ultimate destination for movies and music entertainment!</p>
+        </section>
+
+        <section id="trending" class="section">
+            <h2>Trending Now 🔥</h2>
+            <div class="carousel-container">
+                <button class="carousel-btn prev" onclick="moveCarousel(-1, 'trending')">&#10094;</button>
+                <div class="carousel" id="trending-carousel">
+                    <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1600&auto=format&fit=crop');">
+                        <div class="carousel-caption"><h3>The Last Guardian</h3><p>An epic adventure awaits in this blockbuster hit!</p></div>
+                    </div>
+                    <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1594908900066-3f47337549d8?q=80&w=1600&auto=format&fit=crop');">
+                        <div class="carousel-caption"><h3>Midnight Dreams</h3><p>A thrilling mystery that keeps you on the edge!</p></div>
+                    </div>
+                    <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1600&auto=format&fit=crop');">
+                        <div class="carousel-caption"><h3>City Lights</h3><p>Romance and drama in the heart of the city!</p></div>
+                    </div>
+                </div>
+                <button class="carousel-btn next" onclick="moveCarousel(1, 'trending')">&#10095;</button>
+            </div>
+        </section>
+
+        <section id="movies" class="section">
+            <h2>Popular Movies 🎬</h2>
+            <div class="carousel-container">
+                <button class="carousel-btn prev" onclick="moveCarousel(-1, 'movies')">&#10094;</button>
+                <div class="carousel" id="movies-carousel">
+                    <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=1600&auto=format&fit=crop');"><div class="carousel-caption"><h3>Action Thunder</h3><p>High-octane action and incredible stunts!</p></div></div>
+                    <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=1600&auto=format&fit=crop');"><div class="carousel-caption"><h3>The Enchanted Forest</h3><p>A magical journey for the whole family!</p></div></div>
+                    <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1440404653325-ab127d49abc1?q=80&w=1600&auto=format&fit=crop');"><div class="carousel-caption"><h3>Dark Shadows</h3><p>A spine-chilling horror experience!</p></div></div>
+                </div>
+                <button class="carousel-btn next" onclick="moveCarousel(1, 'movies')">&#10095;</button>
+            </div>
+        </section>
+
+        <section id="music" class="section">
+            <h2>Top Music 🎧</h2>
+            <div class="carousel-container">
+                <button class="carousel-btn prev" onclick="moveCarousel(-1, 'music')">&#10094;</button>
+                <div class="carousel" id="music-carousel">
+                    <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1600&auto=format&fit=crop');"><div class="carousel-caption"><h3>Summer Vibes 2025</h3><p>The hottest tracks of the season!</p></div></div>
+                    <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=1600&auto=format&fit=crop');"><div class="carousel-caption"><h3>Classical Masterpieces</h3><p>Timeless compositions from the greatest composers!</p></div></div>
+                    <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=1600&auto=format&fit=crop');"><div class="carousel-caption"><h3>Rock Legends</h3><p>Epic guitar riffs and powerful vocals!</p></div></div>
+                </div>
+                <button class="carousel-btn next" onclick="moveCarousel(1, 'music')">&#10095;</button>
+            </div>
+        </section>
+
+        <section id="registration" class="section">
+            <h2>Register for Free 🚀</h2>
+            <div class="success-msg" id="success-msg">Registration successful! Welcome to ShowBox! $\checkmark$</div>
+            <form id="registration-form">
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name">
+                    <div class="error" id="name-error">🚫 Required. Name must only contain letters and spaces.</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" placeholder="example@email.com">
+                    <div class="error" id="email-error">🚫 Required. Must be in a valid format (e.g., user@example.com).</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact">Contact Number *</label>
+                    <input type="tel" id="contact" name="contact" placeholder="Enter 10-digit mobile number" maxlength="10">
+                    <div class="error" id="contact-error">🚫 Required. Must contain exactly 10 digits (numbers only).</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="gender">Gender *</label>
+                    <select id="gender" name="gender">
+                        <option value="">Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Prefer not to say</option>
+                    </select>
+                    <div class="error" id="gender-error">🚫 Please select your gender.</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password *</label>
+                    <input type="password" id="password" name="password" placeholder="Enter strong password">
+                    <div class="error" id="password-error">🚫 Must be $\ge$ 6 characters, and contain UPPPERCASE, lowercase, number, and special character.</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password *</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Re-enter your password">
+                    <div class="error" id="confirm-password-error">🚫 Passwords do not match.</div>
+                </div>
+
+                <button type="submit" class="submit-btn">Register Now!</button>
+            </form>
+        </section>
+
+        <section id="feedback" class="section">
+            <h2>Rate Our Top Picks ⭐</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;">Hover and click on the stars to rate the content!</p>
+            
+            <div class="carousel-container rating-slider-wrapper">
+                <button class="carousel-btn prev" onclick="moveCarousel(-1, 'rating')">&#10094;</button>
+                
+                <div class="carousel rating-slider-content" id="rating-carousel">
+                    
+                    <article class="rating-card" data-title="The Last Guardian">
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=400&auto=format&fit=crop');"></div>
+                        <div class="card-content"><h3>The Last Guardian</h3><p>An epic adventure awaits in this blockbuster hit!</p><div class="stars-container" data-item="guardian"><span class="star" data-rating="1">★</span><span class="star" data-rating="2">★</span><span class="star" data-rating="3">★</span><span class="star" data-rating="4">★</span><span class="star" data-rating="5">★</span></div><div class="rating-text">Rate this!</div></div>
+                    </article>
+                    
+                    <article class="rating-card" data-title="Action Thunder">
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=400&auto=format&fit=crop');"></div>
+                        <div class="card-content"><h3>Action Thunder</h3><p>High-octane action and incredible stunts!</p><div class="stars-container" data-item="thunder"><span class="star" data-rating="1">★</span><span class="star" data-rating="2">★</span><span class="star" data-rating="3">★</span><span class="star" data-rating="4">★</span><span class="star" data-rating="5">★</span></div><div class="rating-text">Rate this!</div></div>
+                    </article>
+                    
+                    <article class="rating-card" data-title="Rock Legends">
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=400&auto=format&fit=crop');"></div>
+                        <div class="card-content"><h3>Rock Legends</h3><p>Epic guitar riffs and powerful vocals!</p><div class="stars-container" data-item="rock"><span class="star" data-rating="1">★</span><span class="star" data-rating="2">★</span><span class="star" data-rating="3">★</span><span class="star" data-rating="4">★</span><span class="star" data-rating="5">★</span></div><div class="rating-text">Rate this!</div></div>
+                    </article>
+
+
+                    <article class="rating-card" data-title="Rock Legends">
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=1600&auto=format&fit=crop');"></div>
+                        <div class="card-content"><h3>Rock Legends</h3><p>Epic guitar riffs and powerful vocals!</p><div class="stars-container" data-item="rock"><span class="star" data-rating="1">★</span><span class="star" data-rating="2">★</span><span class="star" data-rating="3">★</span><span class="star" data-rating="4">★</span><span class="star" data-rating="5">★</span></div><div class="rating-text">Rate this!</div></div>
+                    </article>
+                </div>
+                <button class="carousel-btn next" onclick="moveCarousel(1, 'rating')">&#10095;</button>
+            </div>
+            <div style="margin-top: 4rem; text-align: center;">
+                <h3 style="color: var(--secondary-color); margin-bottom: 1rem; font-size: 1.5rem;">General Feedback 💬</h3>
+                <textarea id="general-feedback-text" placeholder="Share your general thoughts on ShowBox..." style="width: 100%; max-width: 600px;"></textarea>
+                <button onclick="submitGeneralFeedback()" class="submit-btn" style="margin-top: 1.5rem; max-width: 600px;">Submit General Feedback</button>
+            </div>
+        </section>
+    </main>
+
+    <footer style="text-align: center; padding: 20px; background-color: var(--bg-card); color: var(--text-muted); font-size: 0.9em;">
+        <p>&copy; 2025 ShowBox. All rights reserved. | Designed with ❤ and Code.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
